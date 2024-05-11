@@ -7,7 +7,7 @@ function TicTacToeButton() {
 
     const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription } = useContext(HomePageContext)
 
-    const description = 'Experience the classic game of tic-tac-toe right on your device! Perfect for quick breaks or passing time.'
+    const description = 'Experience the classic game of tic-tac-toe! Perfect for quick breaks or passing time.'
 
     const handleClick = () => {
         setIsSelected('ttt');

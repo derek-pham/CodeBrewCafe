@@ -8,7 +8,7 @@ function CalculatorButton() {
 
   const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription } = useContext(HomePageContext)
 
-  const description = 'Featuring a sleek, minimalist interface, this app provides essential functions like addition, subtraction, multiplication, and division.'
+  const description = 'With a minimalist interface, this app provides essential functions like addition, subtraction, multiplication, and division.'
 
   const handleClick = () => {
     setIsSelected('calc');
