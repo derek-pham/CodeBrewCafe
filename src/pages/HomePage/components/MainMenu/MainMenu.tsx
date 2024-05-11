@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MainMenu.css';
 import TicTacToeButton from './buttons/TicTacToeButton/TicTacToeButton';
 import CalculatorButton from './buttons/CalculatorButton/CalculatorButton';
 
 function MainMenu() {
-  const [isSelected, setIsSelected] = useState('');
-
   return (
     <div className="mainMenu">
       <TicTacToeButton />

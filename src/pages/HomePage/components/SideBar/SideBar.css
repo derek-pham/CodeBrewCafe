@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
 .SideBar {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;  
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    justify-items: center;     
     height: calc(100vh - 6px);
     width: 100%;
     background-color: whitesmoke;
@@ -10,7 +12,57 @@
     border-radius: 5px;
 }
 
-.SideBar p {
-    font-family: "Noto Sans KR", sans-serif;
+.SideBar img {
+    margin-top: 2cm;
+    border: 3px solid rgba(112, 128, 144);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#displayTitle {
+    font-family: "Poetsen One", sans-serif;
     text-align: center;
+    color: #242424;
+    font-size: 32px;
+    margin-top: 1cm;
+
+}
+
+#description {
+    font-family: "Poetsen One", sans-serif;
+    text-align: center;
+    color: #4d4d4d;
+    font-size: 18px;
+    margin: 0 1cm;
+}
+
+#gobutton {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 24px;
+    height: 1.6cm;
+    width: 7cm;
+    background-color: tomato;
+    transition: transform 0.1s ease-in-out,color 0.2s ease-in-out;
+    outline: none;
+}
+
+#gobutton:hover {
+    transform: scale(1.05);
+    border: 1px solid tomato;
+    color: #868686;
+}
+
+#gobutton:active {
+    transform: scale(0.99); 
+    animation: click 0.5s ;
+}
+
+@keyframes click {
+    0% {
+        box-shadow: 0 0 0 0px rgb(255, 99, 71, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgb(255, 99, 71, 0);
+    }
 }

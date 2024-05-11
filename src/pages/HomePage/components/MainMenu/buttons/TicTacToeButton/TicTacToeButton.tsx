@@ -5,17 +5,20 @@ import { HomePageContext } from '../../../../HomePageContext';
 
 function TicTacToeButton() {
 
-    const {isSelected, setIsSelected, setDisplayTitle, setDisplayImage} = useContext(HomePageContext)
+    const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription } = useContext(HomePageContext)
+
+    const description = 'Experience the classic game of tic-tac-toe right on your device! Perfect for quick breaks or passing time.'
 
     const handleClick = () => {
         setIsSelected('ttt');
         setDisplayTitle('TIC-TAC-TOE')
         setDisplayImage(tttImage)
+        setDescription(description)
     };
 
     return (
         <button
-            className={`TicTacToeButton ${isSelected == 'ttt'? 'tttButton-selected' : ''}`}
+            className={`TicTacToeButton ${isSelected == 'ttt' ? 'tttButton-selected' : ''}`}
             onClick={handleClick}
         >
         </button>
