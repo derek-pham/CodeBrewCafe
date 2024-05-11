@@ -1,0 +1,25 @@
+body {
+    background-color: whitesmoke;
+}
+
+.homepage {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    background-color: whitesmoke;
+    /* Base color */
+    background-image: radial-gradient(circle, rgba(112, 128, 144, .9) 1px, transparent 1px);
+    background-size: 1cm 1cm;
+    /* Controls the spacing between dots */
+    position: relative;
+    /* For positioning inner content */
+}
+
+.content {    
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 1cm;
+    position: relative;
+    z-index: 1;
+    color: black;
+}

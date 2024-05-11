@@ -1,0 +1,29 @@
+#calcButton {
+    position: relative;
+    top: .5cm;
+    left: .5cm;
+    height: 5cm;
+    width: 5cm;
+    background-color: whitesmoke;
+    background-image: url("calculator.png");
+    background-size: 90%;
+    /* Adjust this as needed */
+    background-position: center;
+    /* Centers the background image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+
+    border: 3px solid rgba(112, 128, 144);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    box-shadow: 5px 5px orange;
+    outline: none;
+}
+
+#calcButton:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 4px orange;
+}
+
+#calcButton:active {
+    transform: scale(0.8); /* Scales down the button when clicked */
+}

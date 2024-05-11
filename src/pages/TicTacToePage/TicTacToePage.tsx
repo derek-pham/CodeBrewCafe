@@ -3,7 +3,10 @@ import './TicTacToePage.css'
 export default function TicTacToePage() {
     return (
         <>
-            <p>TTT</p>
+            <div className="homepage">
+                <div className="content">
+                </div>
+            </div>
         </>
     )
 }
