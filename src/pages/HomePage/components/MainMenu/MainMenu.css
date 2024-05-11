@@ -1,0 +1,21 @@
+.mainMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#testbutton {
+    position: relative;
+    top: .5cm;
+    left: .5cm;
+    height: 2cm;
+    width: 2cm;
+    background-color: whitesmoke;
+    border: 3px solid rgba(112, 128, 144);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    box-shadow: 5px 5px lightblue;
+}
+
+#testbutton:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 4px lightblue;
+}
