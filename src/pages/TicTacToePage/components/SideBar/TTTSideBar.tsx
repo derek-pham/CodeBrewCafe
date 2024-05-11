@@ -1,26 +1,27 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TTTSideBar.css';
 
 function TTTSideBar() {
+  const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    if (isActive) {
-      const timeout = setTimeout(() => {
-        setIsActive(false);  // Clears the animation property (starts as false)
-      }, 500);  // Assuming the animation lasts 500ms
+  const handleAnimationEnd = () => {
+    setIsActive(false);
+    navigate('/'); // Navigate after animation ends, using navigate
+  };
 
-      return () => clearTimeout(timeout);
-    }
-  }, [isActive]);
+  const handleMouseDown = () => {
+    setIsActive(true); // Start animation
+  };
 
   return (
-    <div className="SideBar">
+    <div className="TTTSideBar">
       <button
         id='backbutton'
-        onMouseDown={() => setIsActive(true)}
+        onMouseDown={handleMouseDown}
+        onAnimationEnd={handleAnimationEnd} // Add event listener for animation end
         className={isActive ? 'active' : ''}
-        style={{ animation: isActive ? 'click 0.5s forwards' : 'none' }}
       >
         BACK
       </button>

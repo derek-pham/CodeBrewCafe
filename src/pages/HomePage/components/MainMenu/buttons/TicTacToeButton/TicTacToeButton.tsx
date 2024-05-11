@@ -5,7 +5,7 @@ import { HomePageContext } from '../../../../HomePageContext';
 
 function TicTacToeButton() {
 
-    const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription } = useContext(HomePageContext)
+    const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription, setPageLink } = useContext(HomePageContext)
 
     const description = 'Experience the classic game of tic-tac-toe! Perfect for quick breaks or passing time.'
 
@@ -14,6 +14,7 @@ function TicTacToeButton() {
         setDisplayTitle('TIC-TAC-TOE')
         setDisplayImage(tttImage)
         setDescription(description)
+        setPageLink('/tictactoe')
     };
 
     return (

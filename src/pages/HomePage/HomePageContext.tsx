@@ -11,6 +11,7 @@ export function HomePageContextProvider({ children }) {
     const [displayImage, setDisplayImage] = useState(coffeeImg);
     const [isSelected ,setIsSelected] = useState('')
     const [description ,setDescription] = useState(welcomeMessage)
+    const [pageLink ,setPageLink] = useState('#')
 
     const value = {
         displayTitle,
@@ -20,7 +21,9 @@ export function HomePageContextProvider({ children }) {
         isSelected,
         setIsSelected,
         description,
-        setDescription
+        setDescription,
+        pageLink,
+        setPageLink
     };
 
     return (

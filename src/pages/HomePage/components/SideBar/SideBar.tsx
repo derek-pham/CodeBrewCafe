@@ -1,34 +1,36 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SideBar.css';
 import { HomePageContext } from '../../HomePageContext';
 
 function SideBar() {
-  const { displayTitle, displayImage, description } = useContext(HomePageContext);
+  const navigate = useNavigate();
+  const { displayTitle, displayImage, description, pageLink } = useContext(HomePageContext);
   const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    if (isActive) {
-      const timeout = setTimeout(() => {
-        setIsActive(false);  // Clears the animation property (starts as false)
-      }, 500);  // Assuming the animation lasts 500ms
+  const handleAnimationEnd = () => {
+    setIsActive(false);
+    navigate(pageLink); // Navigate after animation ends, using navigate
+  };
 
-      return () => clearTimeout(timeout);
-    }
-  }, [isActive]);
+  const handleMouseDown = () => {
+    setIsActive(true); // Start animation
+  };
 
   return (
     <div className="SideBar">
       <img src={displayImage} alt="thumbnail" />
       <p id='displayTitle'>{displayTitle}</p>
       <p id='description'>{description}</p>
-      <button
+      {pageLink != '#' ? <button
         id='gobutton'
-        onMouseDown={() => setIsActive(true)}
+        onMouseDown={handleMouseDown}
+        onAnimationEnd={handleAnimationEnd}
         className={isActive ? 'active' : ''}
-        style={{ animation: isActive ? 'click 0.5s forwards' : 'none' }}
       >
         GO
-      </button>
+      </button> : ''}
+
     </div>
   );
 }

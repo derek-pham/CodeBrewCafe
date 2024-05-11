@@ -6,7 +6,7 @@ export default function TicTacToePage() {
         <>
             <div className="tttpage">
                 <div className="tttcontent">
-                    <p></p>
+                    <div></div>
                     <TTTSideBar/>
                 </div>
             </div>
