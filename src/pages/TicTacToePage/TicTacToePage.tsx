@@ -1,10 +1,13 @@
 import './TicTacToePage.css'
+import TTTSideBar from './components/SideBar/TTTSideBar'
 
 export default function TicTacToePage() {
     return (
         <>
-            <div className="homepage">
-                <div className="content">
+            <div className="tttpage">
+                <div className="tttcontent">
+                    <p></p>
+                    <TTTSideBar/>
                 </div>
             </div>
         </>

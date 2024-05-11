@@ -2,7 +2,7 @@ body {
     background-color: whitesmoke;
 }
 
-.homepage {
+.tttpage {
     width: 100%;
     height: 100vh;
     /* Full viewport height */
@@ -15,9 +15,9 @@ body {
     /* For positioning inner content */
 }
 
-.content {    
+.tttcontent {    
     display: grid;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: 1fr 20%;
     gap: 1cm;
     position: relative;
     z-index: 1;
