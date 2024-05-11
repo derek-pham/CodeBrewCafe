@@ -1,4 +1,4 @@
-#calcButton {
+.calcButton {
     position: relative;
     top: .5cm;
     left: .5cm;
@@ -7,23 +7,28 @@
     background-color: whitesmoke;
     background-image: url("calculator.png");
     background-size: 90%;
-    /* Adjust this as needed */
     background-position: center;
-    /* Centers the background image */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
-
     border: 3px solid rgba(112, 128, 144);
-    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     box-shadow: 5px 5px orange;
     outline: none;
+    transition: transform 0.15s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-#calcButton:hover {
-    transform: scale(1.1);
+.calcButton:hover {
+    transform: scale(1.025);
     box-shadow: 2px 2px 4px orange;
+    border-color: rgba(112, 128, 144);
 }
 
-#calcButton:active {
-    transform: scale(0.8); /* Scales down the button when clicked */
+.calcButton:active {
+    transform: scale(0.975);
+}
+
+.calcButton.tttButton-selected {
+    box-shadow: 0 0 0 10px rgb(255, 165, 0, 0.9); /* Uniform shadow with no blur */
+}
+
+.calcButton:focus {
+    outline: none;
 }

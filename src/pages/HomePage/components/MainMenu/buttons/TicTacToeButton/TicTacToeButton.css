@@ -1,4 +1,4 @@
-#tttButton {
+.TicTacToeButton {
     position: relative;
     top: .5cm;
     left: .5cm;
@@ -7,23 +7,28 @@
     background-color: whitesmoke;
     background-image: url("tic-tac-toe.png");
     background-size: 90%;
-    /* Adjust this as needed */
     background-position: center;
-    /* Centers the background image */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
-
     border: 3px solid rgba(112, 128, 144);
-    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     box-shadow: 5px 5px tomato;
     outline: none;
+    transition: transform 0.15s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-#tttButton:hover {
-    transform: scale(1.1);
+.TicTacToeButton:hover {
+    transform: scale(1.025);
     box-shadow: 2px 2px 4px tomato;
+    border-color: rgba(112, 128, 144);
 }
 
-#tttButton:active {
-    transform: scale(0.8); /* Scales down the button when clicked */
+.TicTacToeButton:active {
+    transform: scale(0.975);
+}
+
+.TicTacToeButton.tttButton-selected {
+    box-shadow: 0 0 0 10px rgb(255, 99, 71, 0.9); /* Uniform shadow with no blur */
+}
+
+.TicTacToeButton:focus {
+    outline: none;
 }

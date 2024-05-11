@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
+import { HomePageContextProvider } from './HomePageContext';
 import SideBar from './components/SideBar/SideBar';
 import MainMenu from './components/MainMenu/MainMenu';
 
 function HomePage() {
+
   return (
-    <div className="homepage">
-      <div className="content">
-      <SideBar/>
-      <MainMenu/>
+    <HomePageContextProvider>
+      <div className="homepage">
+        <div className="content">
+          <SideBar />
+          <MainMenu />
+        </div>
       </div>
-    </div>
+    </HomePageContextProvider>
   );
 }
 
