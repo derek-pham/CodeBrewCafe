@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { TTTContext } from '../../TicTacToePageContext';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../../../../hooks/useTheme';
+import themeSwitch from '../../../HomePage/components/SideBar/dark-mode.png'
 import './TTTSideBar.css';
 
 function TTTSideBar() {
   const { gameStatus, gameWinner, winningCombo } = useContext(TTTContext)
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
+  const toggleTheme = useTheme();
 
   const handleAnimationEnd = () => {
     setIsActive(false);
@@ -19,6 +22,9 @@ function TTTSideBar() {
 
   return (
     <div className="TTTSideBar">
+      <button id='theme-button-ttt' onClick={toggleTheme}>
+        <img src={themeSwitch} alt="" />
+      </button>
       <button
         id='backbutton'
         onMouseDown={handleMouseDown}
