@@ -1,9 +1,12 @@
 .ttt-div {
     border: 1px solid rgba(112, 128, 144);
     display: flex;
-    align-items: center; /* Explicitly center vertically */
-    justify-content: center; /* Explicitly center horizontally */
+    align-items: center;
+    /* Explicitly center vertically */
+    justify-content: center;
+    /* Explicitly center horizontally */
     user-select: none;
+    background-color: var(--mn-col);
 }
 
 .ttt-div img {
@@ -12,4 +15,20 @@
 
 .ttt-div-active {
     border: 1px solid tomato;
+    background-color: tomato;
+    color: whitesmoke;    
+    animation: winner .4s ease-in-out forwards
+}
+
+.ttt-div-active img {
+    filter: invert(11);
+}
+
+@keyframes winner {
+    0% {
+        background-color: rgb(255, 100, 70, 0);
+    }
+    100% {
+        background-color: rgb(255, 100, 70, 1);
+    }
 }
