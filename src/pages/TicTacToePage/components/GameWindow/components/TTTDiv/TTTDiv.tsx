@@ -5,13 +5,18 @@ import markO from './letter-o.png'
 import markX from './letter-x.png'
 
 export default function TTTDiv({ position }) {
-    const { currentPlayer, setCurrentPlayer, gameStatus, setGameStatus, resetDivTrigger, gameWinner } = useContext(TTTContext)
+    const { currentPlayer, setCurrentPlayer, gameStatus, setGameStatus, resetDivTrigger, gameWinner, winningCombo } = useContext(TTTContext)
     const [mark, setMark] = useState('')
+    const [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
         console.log(resetDivTrigger)
         setMark('')
     }, [resetDivTrigger])
+
+    useEffect(() => {
+        setIsActive(winningCombo.includes(position))
+    }, [winningCombo])
 
     const updateBoard = (position, char) => {
         if (gameStatus[position] === '-') { // Ensure the cell is empty before updating
@@ -39,7 +44,7 @@ export default function TTTDiv({ position }) {
 
     return (
         <>
-            <div className="ttt-div" onClick={addMarker}>
+            <div className={`ttt-div ${isActive?'ttt-div-active':''}`} onClick={addMarker}>
                 <img src={mark} alt="" />
             </div>
         </>

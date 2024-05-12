@@ -9,7 +9,7 @@ export function TicTacToePageContextProvider({ children }) {
     const [setting, setSetting] = useState('alternate-default')
     const [gameStatus, setGameStatus] = useState(['-', '-', '-', '-', '-', '-', '-', '-', '-'])
     const [gameWinner, setGameWinner] = useState(null)
-    const [winningCombo, setWinningCombo] = useState(null)
+    const [winningCombo, setWinningCombo] = useState([])
     const [resetDivTrigger, setResetDivTrigger] = useState(false)
 
     const value = {

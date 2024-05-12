@@ -9,3 +9,7 @@
 .ttt-div img {
     width: 2cm;
 }
+
+.ttt-div-active {
+    border: 1px solid tomato;
+}

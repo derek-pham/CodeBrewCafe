@@ -26,7 +26,7 @@ export default function TTTReset() {
         }
         setGameStatus(['-', '-', '-', '-', '-', '-', '-', '-', '-'])
         setGameWinner(null)
-        setWinningCombo(null)
+        setWinningCombo([])
         setResetDivTrigger(prev => !prev);
     }
 
