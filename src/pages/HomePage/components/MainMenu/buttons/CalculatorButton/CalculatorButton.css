@@ -4,21 +4,21 @@
     left: .5cm;
     height: 5cm;
     width: 5cm;
-    background-color: whitesmoke;
+    background-color: var(--img-bg-col);
     background-image: url("calculator.png");
     background-size: 90%;
     background-position: center;
     background-repeat: no-repeat;
-    border: 3px solid rgba(112, 128, 144);
-    box-shadow: 5px 5px orange;
+    border: 3px solid var(--bord-col);
+    box-shadow: 5px 5px var(--calcbxshd);
     outline: none;
     transition: transform 0.15s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
 .calcButton:hover {
     transform: scale(1.025);
-    box-shadow: 2px 2px 4px orange;
-    border-color: rgba(112, 128, 144);
+    box-shadow: 2px 2px 4px var(--calcbxshd);
+    border-color: var(--bord-col);
 }
 
 .calcButton:active {
@@ -26,7 +26,7 @@
 }
 
 .calcButton.tttButton-selected {
-    box-shadow: 0 0 0 10px rgb(255, 165, 0, 0.9); /* Uniform shadow with no blur */
+    box-shadow: 0 0 0 10px var(--calcbxshd); /* Uniform shadow with no blur */
 }
 
 .calcButton:focus {

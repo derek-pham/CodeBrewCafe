@@ -1,14 +1,14 @@
 body {
-    background-color: whitesmoke;
+    background-color: var(--mn-col);
 }
 
 .homepage {
     width: 100%;
     height: 100vh;
     /* Full viewport height */
-    background-color: whitesmoke;
+    background-color: var(--mn-col);
     /* Base color */
-    background-image: radial-gradient(circle, rgba(112, 128, 144, .9) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-col) 1px, transparent 1px);
     background-size: 1cm 1cm;
     /* Controls the spacing between dots */
     position: relative;

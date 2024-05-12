@@ -1,7 +1,8 @@
 .ttt-player {
     height: 60%;
     width: 45%;
-    background-color: whitesmoke;
+    color: var(--mn-txt-col);
+    background-color: var(--mn-col);
     border: 3px solid rgba(112, 128, 144);
     border-radius: 2px;
 }
