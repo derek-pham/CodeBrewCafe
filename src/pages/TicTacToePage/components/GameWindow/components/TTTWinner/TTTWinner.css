@@ -1,0 +1,15 @@
+.ttt-winner {
+    display: flex;
+    align-items: center; /* Explicitly center vertically */
+    justify-content: center; /* Explicitly center horizontally */
+    user-select: none;
+}
+
+.ttt-winner p {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 48px;
+    color: whitesmoke;
+    background-color: tomato;
+    padding: 5px 40px;
+    border-radius: 20px;
+}

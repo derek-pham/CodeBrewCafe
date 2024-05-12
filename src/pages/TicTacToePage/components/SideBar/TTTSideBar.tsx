@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
+import { TTTContext } from '../../TicTacToePageContext';
 import { useNavigate } from 'react-router-dom';
 import './TTTSideBar.css';
 
 function TTTSideBar() {
+  const { gameStatus, gameWinner, winningCombo } = useContext(TTTContext)
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
 

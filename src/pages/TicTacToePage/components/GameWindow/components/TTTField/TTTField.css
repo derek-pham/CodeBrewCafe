@@ -1,0 +1,11 @@
+.ttt-field {
+    height: 10cm;
+    width: 10cm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.ttt-test {
+    border: 1px solid rgba(112, 128, 144);
+}

@@ -1,0 +1,9 @@
+.ttt-player-score {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 18px;
+    user-select: none;
+    display: flex;
+    align-items: center; /* Explicitly center vertically */
+    justify-content: center; /* Explicitly center horizontally */
+    user-select: none;
+}

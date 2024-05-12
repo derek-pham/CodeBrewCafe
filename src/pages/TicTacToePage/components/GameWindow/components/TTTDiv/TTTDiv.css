@@ -1,0 +1,11 @@
+.ttt-div {
+    border: 1px solid rgba(112, 128, 144);
+    display: flex;
+    align-items: center; /* Explicitly center vertically */
+    justify-content: center; /* Explicitly center horizontally */
+    user-select: none;
+}
+
+.ttt-div img {
+    width: 2cm;
+}

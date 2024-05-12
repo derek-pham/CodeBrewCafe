@@ -1,0 +1,25 @@
+.ttt-player {
+    height: 60%;
+    width: 45%;
+    background-color: whitesmoke;
+    border: 3px solid rgba(112, 128, 144);
+    border-radius: 2px;
+}
+
+.ttt-player-title {
+    margin-top: 10%;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 22px;
+    text-align: center;
+    user-select: none;
+    transition: transform .1s ease-in-out;
+}
+
+.ttt-div img {
+    width: 2cm;
+}
+
+.highlight-true {
+    color: tomato;
+    transform: scale(1.3);
+}
