@@ -30,7 +30,7 @@ The concept of having an assortment of brain training games is something I wante
 
 ## Home
 #### Landing Page
-![Home Page](public\readme-assets\home-landingpage.png)
+![Home Page](public/readme-assets/home-landingpage.png)
 The landing page features a collection of many to come widgets and currently consists of the TicTacToe widget (the calculator is still a work in progress at this stage). 
 
 Each widget has their own page and can be accessed by selecting them from the grid layout and then selecting the go button to navigate to their page.
@@ -38,7 +38,7 @@ Each widget has their own page and can be accessed by selecting them from the gr
 ## Widgets
 ### TicTacToe
 #### Landing Page
-![TicTacToe Page](public\readme-assets\tictactoe-landingpage.png)
+![TicTacToe Page](public/readme-assets/tictactoe-landingpage.png)
 The first widget I've created and added is the classic game of TicTacToe. Players take turns placing an 'X' or an 'O' until either players three adjacently in a straight line and earn a point. 
 
 The page features the same white-paper colour scheme along with a single colour accent as part of its theme.
