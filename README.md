@@ -21,9 +21,9 @@ The main goal of CodeBrewCafe is to continuously build and expand the project, m
 ### Inspiration and concept
 The inspiration behind the design and concept of CodeBrewCafe is based on the Brain Age game on the Nintendo DS.
 
-<img src="public/readme-assets/inspo1.png" alt="Brain Age" width="300"/>
-<img src="public/readme-assets/inspo2.png" alt="Brain Age" width="300"/>
-<img src="public/readme-assets/inspo3.png" alt="Brain Age" width="300"/>
+<img src="public\readme-assets\inspo1.png" alt="Brain Age" width="300"/>
+<img src="public\readme-assets\inspo2.png" alt="Brain Age" width="300"/>
+<img src="public\readme-assets\inspo3.png" alt="Brain Age" width="300"/>
 
 The concept of having an assortment of brain training games is something I wanted to reflect in CodeBrewCafe as well as the math paper-like background and white-paper colour scheme which is inspired by Brain Age's own math-themed UI and colour design.
 
