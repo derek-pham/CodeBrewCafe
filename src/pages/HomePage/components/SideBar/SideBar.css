@@ -96,3 +96,10 @@
     margin: 0;
     user-select: none;
 }
+
+@media (max-width: 550px) {
+    #gobutton {
+        /* 7cm is approximately 96.21% of 275px. */
+        width: 96.21%; 
+    }
+}
