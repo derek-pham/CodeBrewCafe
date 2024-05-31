@@ -24,6 +24,7 @@
     outline: none;
     margin-top: 0.5cm;
     user-select: none;
+    transition: width 0.5s ease;
 }
 
 #backbutton:hover {
@@ -66,4 +67,16 @@
     border: 0;
     margin: 0;
     user-select: none;
+}
+
+@media (max-width: 1300px) {
+    #backbutton {    
+        width: 90%;
+    }
+}
+
+@media (max-width: 660px) {
+    #backbutton {    
+        width: 80%;
+    }
 }

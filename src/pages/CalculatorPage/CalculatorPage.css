@@ -22,6 +22,8 @@ body {
     position: relative;
     z-index: 1;
     color: black;
+    transition: grid-template-columns 0.5s ease;
+    transition: gap 0.5s ease;
 }
 
 .calculator-container {
@@ -30,4 +32,17 @@ body {
     justify-content: center;
     height: 100%;
     width: 100%;
+}
+
+@media (min-width: 1800px) {
+    .calccontent {    
+        grid-template-columns: 1fr 360px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .calccontent {    
+        grid-template-columns: 1fr 33%;
+        gap: 0;
+    }
 }

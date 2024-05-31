@@ -27,6 +27,7 @@ body, html {
     border: 2px solid var(--bord-col);
     border-radius: 10px; /* Optional: border radius for calculator */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for better appearance */
+    transition: margin-right 0.5s ease, width 0.5s ease;
 }
 
 #calcinput {
@@ -76,4 +77,11 @@ body, html {
 #parenthesis-button {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 660px) {
+    .calculator {    
+        width: 90%;
+        margin-right: 6px;
+    }
 }
