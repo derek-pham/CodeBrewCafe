@@ -15,7 +15,7 @@ function CalculatorButton() {
     setDisplayTitle('CALCULATOR')
     setDisplayImage(calcImg)
     setDescription(description)
-    setPageLink('#')
+    setPageLink('/calculator')
   };
 
   return (
