@@ -5,4 +5,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 1px;
+    transition: height 0.5s ease, width 0.5s ease;
+}
+
+@media (max-width: 700px) {
+    .ttt-field {
+        width: 8.5cm;
+        height: 8.5cm;
+    }
 }

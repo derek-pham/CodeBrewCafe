@@ -7,3 +7,45 @@
     width: 100%;
     border-radius: 5px;
 }
+
+@media (max-width: 1000px) {
+    .game-window {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr 250px 100px;
+    }
+
+    #filldiv1 {
+        display: none;
+    }
+
+    .ttt-winner {
+        grid-column: span 2;
+    }
+
+    #filldiv2 {
+        display: none;
+    }
+
+    #Player-X {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    #Player-O {
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    .ttt-field {
+        grid-column: span 2;
+    }
+
+    #filldiv3 {
+        display: none;
+    }
+
+    #resetbutton {
+        grid-column: span 2;
+        margin-bottom: 35px;
+    }
+}

@@ -22,4 +22,23 @@ body {
     position: relative;
     z-index: 1;
     color: black;
+    transition: gap .5s ease;
+}
+
+@media (max-width: 1000px) {
+    .tttcontent {
+        gap: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .tttcontent {
+        grid-template-columns: 1fr 140px;
+    }
+}
+
+@media (max-width: 700px) {
+    .tttcontent {
+        gap: 6px;
+    }
 }

@@ -53,13 +53,13 @@ export default function GameWindow() {
     return (
         <>
             <div className="game-window">
-                <div></div>
+                <div id='filldiv1'></div>
                 <TTTWinner/>
-                <div></div>
+                <div id='filldiv2'></div>
                 <TTTPlayer playername='Player-X' highlightSetting={highlightX} />
-                <TTTField />
+                <TTTField/>
                 <TTTPlayer playername='Player-O' highlightSetting={highlightO} />
-                <div></div>
+                <div id='filldiv3'></div>
                 <TTTReset />
             </div>
         </>
