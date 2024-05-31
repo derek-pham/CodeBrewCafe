@@ -23,3 +23,11 @@ body {
     z-index: 1;
     color: black;
 }
+
+.calculator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

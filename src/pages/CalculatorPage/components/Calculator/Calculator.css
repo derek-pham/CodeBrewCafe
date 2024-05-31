@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Optional: background color */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: 400px;
+    height: 500px;
+    background-color: var(--mn-col);
+    border: 2px solid var(--bord-col);
+    border-radius: 10px; /* Optional: border radius for calculator */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for better appearance */
+}
+
+#calcinput {
+    grid-column: span 4;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 2px solid var(--bord-col);
+    color: var(--mn-txt-col);
+    font-family: "Kode Mono", monospace;
+    font-size: 28px;
+    letter-spacing: 0.01cm;
+    user-select: none;
+    padding: 0 2px;
+    overflow: hidden; 
+}
+
+.calculator button {
+    outline: none; /* Remove default outline */
+    border: none; /* Remove default border */
+    background-color: var(--calcbxshd); /* Background color */
+    color: white; /* Text color */
+    font-size: 30px; /* Adjust font size */
+    padding: 0;
+    font-family: "Kode Mono", monospace;
+    cursor: pointer;
+    user-select: none;
+    margin: 2px;
+    transition: background-color 0.1s ease;
+}
+
+.calculator button:hover {
+    background-color: darkslateblue; /* Background color on hover */
+}
+
+.calculator button:active, .calculator button.active {
+    background-color: darkslateblue; /* Background color on click */
+    border: 2px solid var(--calcbxshd);
+}
+
+.calculator button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+#parenthesis-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
