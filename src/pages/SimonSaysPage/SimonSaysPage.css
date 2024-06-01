@@ -1,0 +1,48 @@
+body {
+    background-color: var(--mn-col);
+}
+
+.simonsayspage {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    background-color: var(--mn-col);
+    /* Base color */
+    background-image: radial-gradient(circle, var(--dot-col) 1px, transparent 1px);
+    background-size: 1cm 1cm;
+    /* Controls the spacing between dots */
+    position: relative;
+    /* For positioning inner content */
+}
+
+.simonsayscontent {    
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    gap: 1cm;
+    position: relative;
+    z-index: 1;
+    color: black;
+    transition: grid-template-columns 0.5s ease;
+    transition: gap 0.5s ease;
+}
+
+.simonsays-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 1800px) {
+    .simonsayscontent {    
+        grid-template-columns: 1fr 360px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .simonsayscontent {    
+        grid-template-columns: 1fr 33%;
+        gap: 0;
+    }
+}

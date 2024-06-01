@@ -14,7 +14,7 @@ function SimonSaysButton() {
         setDisplayTitle('SIMON SAYS')
         setDisplayImage(simonSaysImage)
         setDescription(description)
-        setPageLink('#')
+        setPageLink('/simonsays')
     };
 
     return (
