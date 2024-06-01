@@ -1,0 +1,34 @@
+.simonSaysButton {
+    position: relative;
+    top: .5cm;
+    left: .5cm;
+    height: 5cm;
+    width: 5cm;
+    background-color: var(--img-bg-col);
+    background-image: url("simonsays.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid var(--bord-col);
+    box-shadow: 5px 5px var(--simbxshd);
+    outline: none;
+    transition: transform 0.15s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.simonSaysButton:hover {
+    transform: scale(1.025);
+    box-shadow: 2px 2px 4px var(--simbxshd);
+    border-color: var(--bord-col);
+}
+
+.simonSaysButton:active {
+    transform: scale(0.975);
+}
+
+.simonSaysButton.simonSaysButton-selected {
+    box-shadow: 0 0 0 10px var(--simbxshd); /* Uniform shadow with no blur */
+}
+
+.simonSaysButton:focus {
+    outline: none;
+}

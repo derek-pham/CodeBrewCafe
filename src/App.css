@@ -2,6 +2,7 @@
     --dot-col: rgba(112, 128, 144, .9);
     --tttbxshd: tomato;
     --calcbxshd: orange;
+    --simbxshd: LightGreen;
     --mn-col: whitesmoke;
     --mn-txt-col: #rgb(36, 36, 36);
     --img-bg-col: #fff;
@@ -11,13 +12,14 @@
 
 [data-theme="dark"] {
     --dot-col: rgba(155, 180, 205, 0.9);
+    --tttbxshd: hsl(10, 80%, 55%);
+    --calcbxshd: hsl(40, 90%, 45%);
+    --simbxshd: MediumSeaGreen;
     --mn-col: #394453e3;
     --mn-txt-col: #fff;
     --img-bg-col: hsl(225, 5%, 50%);
     --bord-col: hsl(258, 0%, 85%);
     --testbuttonborder: rgb(89, 115, 124);
-    --tttbxshd: hsl(10, 80%, 55%);
-    --calcbxshd: hsl(40, 90%, 45%);
 }
 
 html, body, #root {
