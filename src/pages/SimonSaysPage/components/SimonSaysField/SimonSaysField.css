@@ -1,0 +1,25 @@
+.simonsaysfield {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    height: 10cm;
+    width: 10cm;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.simonsaysfield.level2 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.simonsaysfield.level3 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+/* CHANGE TO MAKE THIS USER-SELECTED INSTEAD OF SS-SELECTED */
+.fieldsquare.active {
+    background-color: pink;
+}

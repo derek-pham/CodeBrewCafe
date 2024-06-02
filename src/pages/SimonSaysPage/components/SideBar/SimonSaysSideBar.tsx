@@ -19,8 +19,8 @@ function SimonSaysSideBar() {
   };
 
   return (
-    <div className="CalcSideBar">
-      <button id='theme-button-ttt' onClick={toggleTheme}>
+    <div className="SimonSaysSideBar">
+      <button id='theme-button-simonsays' onClick={toggleTheme}>
         <img src={themeSwitch} alt="" />
       </button>
       <button
