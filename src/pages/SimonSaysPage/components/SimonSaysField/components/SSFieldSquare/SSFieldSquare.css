@@ -1,46 +1,80 @@
 :root {
-    --square1: #6B8E23;  /* Olive Drab */
-    --square2: #4682B4;  /* Steel Blue */
-    --square3: #D2691E;  /* Chocolate */
-    --square4: #9ACD32;  /* Yellow Green */
-    --square5: #DAA520;  /* Goldenrod */
-    --square6: #CD5C5C;  /* Indian Red */
-    --square7: #8FBC8F;  /* Dark Sea Green */
-    --square8: #5F9EA0;  /* Cadet Blue */
-    --square9: #BDB76B;  /* Dark Khaki */
-    --square10: #F4A460; /* Sandy Brown */
-    --square11: #87CEEB; /* Sky Blue */
-    --square12: #40E0D0; /* Turquoise */
-    --square13: #FF8C00; /* Dark Orange */
-    --square14: #FF6347; /* Tomato */
-    --square15: #9370DB; /* Medium Purple */
-    --square16: #BA55D3; /* Medium Orchid */
-  }
-  
-.ssfieldsquare {
-    height: 100%;
-    width: 100%;
-    background-color: var(--mn-col);
-    border: 2px solid var(--bord-col);
-    border-radius: 5px;
-    user-select: none;
-    position: relative; /* Sets up positioning context for child's absolute positioning */
-    transition: background-color .15s ease-out;
+  --square1: #6B8E23;  /* Olive Drab */
+  --square2: #4682B4;  /* Steel Blue */
+  --square3: #D2691E;  /* Chocolate */
+  --square4: #9ACD32;  /* Yellow Green */
+  --square5: #DAA520;  /* Goldenrod */
+  --square6: #CD5C5C;  /* Indian Red */
+  --square7: #8FBC8F;  /* Dark Sea Green */
+  --square8: #5F9EA0;  /* Cadet Blue */
+  --square9: #BDB76B;  /* Dark Khaki */
+  --square10: #F4A460; /* Sandy Brown */
+  --square11: #87CEEB; /* Sky Blue */
+  --square12: #40E0D0; /* Turquoise */
+  --square13: #FF8C00; /* Dark Orange */
+  --square14: #FF6347; /* Tomato */
+  --square15: #9370DB; /* Medium Purple */
+  --square16: #BA55D3; /* Medium Orchid */
+  --mn-col: #ffffff;   /* Default color to fade into */
 }
 
-.square1.active { background-color: var(--square1); }
-.square2.active { background-color: var(--square2); }
-.square3.active { background-color: var(--square3); }
-.square4.active { background-color: var(--square4); }
-.square5.active { background-color: var(--square5); }
-.square6.active { background-color: var(--square6); }
-.square7.active { background-color: var(--square7); }
-.square8.active { background-color: var(--square8); }
-.square9.active { background-color: var(--square9); }
-.square10.active { background-color: var(--square10); }
-.square11.active { background-color: var(--square11); }
-.square12.active { background-color: var(--square12); }
-.square13.active { background-color: var(--square13); }
-.square14.active { background-color: var(--square14); }
-.square15.active { background-color: var(--square15); }
-.square16.active { background-color: var(--square16); }
+.ssfieldsquare {
+  height: 100%;
+  width: 100%;
+  background-color: var(--mn-col);
+  border: 2px solid var(--bord-col);
+  border-radius: 5px;
+  user-select: none;
+  position: relative; /* Sets up positioning context for child's absolute positioning */
+  transition: background-color .15s ease-out;
+}
+
+.square1.active { --start-color: var(--square1); background-color: var(--square1); }
+.square2.active { --start-color: var(--square2); background-color: var(--square2); }
+.square3.active { --start-color: var(--square3); background-color: var(--square3); }
+.square4.active { --start-color: var(--square4); background-color: var(--square4); }
+.square5.active { --start-color: var(--square5); background-color: var(--square5); }
+.square6.active { --start-color: var(--square6); background-color: var(--square6); }
+.square7.active { --start-color: var(--square7); background-color: var(--square7); }
+.square8.active { --start-color: var(--square8); background-color: var(--square8); }
+.square9.active { --start-color: var(--square9); background-color: var(--square9); }
+.square10.active { --start-color: var(--square10); background-color: var(--square10); }
+.square11.active { --start-color: var(--square11); background-color: var(--square11); }
+.square12.active { --start-color: var(--square12); background-color: var(--square12); }
+.square13.active { --start-color: var(--square13); background-color: var(--square13); }
+.square14.active { --start-color: var(--square14); background-color: var(--square14); }
+.square15.active { --start-color: var(--square15); background-color: var(--square15); }
+.square16.active { --start-color: var(--square16); background-color: var(--square16); }
+
+/* Apply the animation to the chosen square */
+.square1.chosen {--start-color: var(--square1);animation: chosenAnim .7s ease-out forwards;}
+.square2.chosen {--start-color: var(--square2);animation: chosenAnim .7s ease-out forwards;}
+.square3.chosen {--start-color: var(--square3);animation: chosenAnim .7s ease-out forwards;}
+.square4.chosen {--start-color: var(--square4);animation: chosenAnim .7s ease-out forwards;}
+.square5.chosen {--start-color: var(--square5);animation: chosenAnim .7s ease-out forwards;}
+.square6.chosen {--start-color: var(--square6);animation: chosenAnim .7s ease-out forwards;}
+.square7.chosen {--start-color: var(--square7);animation: chosenAnim .7s ease-out forwards;}
+.square8.chosen {--start-color: var(--square8);animation: chosenAnim .7s ease-out forwards;}
+.square9.chosen {--start-color: var(--square9);animation: chosenAnim .7s ease-out forwards;}
+.square10.chosen {--start-color: var(--square10);animation: chosenAnim .7s ease-out forwards;}
+.square11.chosen {--start-color: var(--square11);animation: chosenAnim .7s ease-out forwards;}
+.square12.chosen {--start-color: var(--square12);animation: chosenAnim .7s ease-out forwards;}
+.square13.chosen {--start-color: var(--square13);animation: chosenAnim .7s ease-out forwards;}
+.square14.chosen {--start-color: var(--square14);animation: chosenAnim .7s ease-out forwards;}
+.square15.chosen {--start-color: var(--square15);animation: chosenAnim .7s ease-out forwards;}
+.square16.chosen {--start-color: var(--square16);animation: chosenAnim .7s ease-out forwards;}
+
+/* Define the animation */
+@keyframes chosenAnim {
+  5% {
+    background-color: var(--start-color);
+  }
+
+  30% {
+    background-color: var(--start-color);
+  }
+
+  100% {
+    background-color: var(--mn-col);
+  }
+}

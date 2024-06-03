@@ -20,6 +20,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 /* CHANGE TO MAKE THIS USER-SELECTED INSTEAD OF SS-SELECTED */
-.fieldsquare.active {
+.fieldsquare.chosen {
     background-color: pink;
 }

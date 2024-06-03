@@ -1,44 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { useTimeout } from "react-use";
-import './SimonSaysField.css'
+import React, { useContext, useEffect, useState } from "react";
+import './SimonSaysField.css';
 import SSFieldSquare from "./components/SSFieldSquare/SSFieldSquare";
+import { SSContext } from "../../SimonSaysPageContext";
 
 export default function SimonSaysField() {
+    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result, setResult, playersAnswers, setPlayersAnswers } = useContext(SSContext);
     const [currentGameStage, setCurrentGameStage] = useState(1);
-    const [activeSquare, setActiveSquare] = useState('');
-    const [sequenceAmount, setSequenceAmount] = useState(2);
-    const [sequencePattern, setSequencePattern]= useState([])
-    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-    let upperLimit = (currentGameStage + 1) ** 2
+    const [sequenceNotInitiated, setSequenceNotInitiated] = useState(true);
+    const [transformTrigger, setTransformTrigger] = useState(false);
+    let upperLimit = (currentGameStage + 1) ** 2;
 
-    async function playRandomSequence() {
-        for (let i = 1; i <= sequenceAmount; i++) {
-            let x = Math.floor((Math.random() * upperLimit) + 1); // 1 ~ upperLimit
-            setActiveSquare(`sq${x}`)
-            console.log(x)
-            await delay(1100);
+    function addToSequencePattern(shouldReset: string) {
+        let newPattern;
+        if (shouldReset === 'reset') {
+            newPattern = [];
+            while (newPattern.length < 2) {
+                let x = Math.floor((Math.random() * upperLimit) + 1);
+                newPattern.push(x);
+            }
+        } else {
+            newPattern = [...sequencePattern];
+            while (newPattern.length < sequenceAmount) {
+                let x = Math.floor((Math.random() * upperLimit) + 1);
+                newPattern.push(x);
+            }
         }
+        setSequencePattern(newPattern);
     }
 
-    function addToSequencePattern() { 
-        let x = Math.floor((Math.random() * upperLimit) + 1);
-        setSequencePattern((prevItems) => [...prevItems, x])
-    }
-
-    async function playSequence() {
-        console.log(sequencePattern)
-        for (let i = 0; i < sequencePattern.length; i++) {
-            let x = sequencePattern[i]
-            setActiveSquare(`sq${x}`)
-            console.log(x)
-            await delay(1100);
-        }
-    }
-
-    // Mounted twice during development
     useEffect(() => {
-        addToSequencePattern()
-    }, [])
+        if (sequenceNotInitiated) {
+            addToSequencePattern('');
+            setSequenceNotInitiated(false);
+        }
+
+        if (result === "WIN" && sequenceAmount > 10) {
+            setCurrentGameStage((prev) => prev + 1);
+            setSequencePattern([]);
+            setTransformTrigger(true);
+            addToSequencePattern('reset');
+        } else if (result === "WIN") {
+            addToSequencePattern('');
+            setPlayersAnswers([]);
+        } else if (result === "LOSE") {
+            setPlayersAnswers([]);
+        }
+
+    }, [result]);
+
+    useEffect(() => {
+        if (transformTrigger) {
+            setSequenceAmount(2);
+            setPlayersAnswers([]); // Clear playersAnswers first
+            addToSequencePattern('reset');
+            console.log('Effect ran due to dependency change');
+            setTransformTrigger(false);
+        } else {
+          // Your effect logic here, which will only run on subsequent dependency changes
+          setTransformTrigger(false);
+        }
+      }, [transformTrigger]);
+
+    useEffect(() => {
+        console.log('sequencePattern:', sequencePattern);
+        console.log('playersAnswers:', playersAnswers);
+        console.log('currentGameStage:', currentGameStage);
+        console.log('sequenceAmount:', currentGameStage);
+    }, [sequencePattern]);
 
     return (
         <div className={`simonsaysfield level${currentGameStage}`}>
@@ -46,7 +74,6 @@ export default function SimonSaysField() {
             <SSFieldSquare squareNum={`square2`} isActivated={activeSquare === 'sq2'} setActiveSquare={setActiveSquare} />
             <SSFieldSquare squareNum={`square3`} isActivated={activeSquare === 'sq3'} setActiveSquare={setActiveSquare} />
             <SSFieldSquare squareNum={`square4`} isActivated={activeSquare === 'sq4'} setActiveSquare={setActiveSquare} />
-            <button onClick={playSequence} style={{ position: 'absolute', zIndex: '2', userSelect: 'none' }}></button>
             {currentGameStage >= 2 && (
                 <>
                     <SSFieldSquare squareNum={`square5`} isActivated={activeSquare === 'sq5'} setActiveSquare={setActiveSquare} />
@@ -68,5 +95,5 @@ export default function SimonSaysField() {
                 </>
             )}
         </div>
-    )
+    );
 }
