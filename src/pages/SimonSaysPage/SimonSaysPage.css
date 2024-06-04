@@ -48,3 +48,9 @@ body {
         gap: 0;
     }
 }
+
+@media (max-width: 600px) {
+    .simonsayscontent {    
+        gap: 5px;
+    }
+}
