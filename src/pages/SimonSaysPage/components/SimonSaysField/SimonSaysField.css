@@ -10,6 +10,7 @@
     width: 10cm;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
+    transition: height 0.1s ease, width 0.1s ease;
 }
 
 .simonsaysfield.level2 {
@@ -19,7 +20,15 @@
 .simonsaysfield.level3 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
 /* CHANGE TO MAKE THIS USER-SELECTED INSTEAD OF SS-SELECTED */
 .fieldsquare.chosen {
     background-color: pink;
+}
+
+@media (max-width: 660px) {
+    .simonsaysfield {
+        height: 7.5cm;
+        width: 7.5cm;
+    }
 }

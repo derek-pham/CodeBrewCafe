@@ -8,3 +8,9 @@
     text-align: center;
     align-content: center;
 }
+
+@media (max-width: 660px) {
+    .simonsayslives {
+        width: 70%;
+    }
+}
