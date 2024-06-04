@@ -5,6 +5,8 @@ import { SSContext } from "../../../../SimonSaysPageContext";
 export default function SimonSaysTitle() {
     const { playersAnswers, sequencePattern, result, setResult, setSequenceAmount } = useContext(SSContext);
     const [resultMessage, setResultMessage] = useState('')
+    const [answerIs, setAnswerIs] = useState('')
+    const [renderMsg, setRenderMsg] = useState(false)
 
     useEffect(() => {
         if (playersAnswers.length > 0 && playersAnswers.length === sequencePattern.length) {
@@ -17,6 +19,8 @@ export default function SimonSaysTitle() {
             };
 
             if (arraysMatch(playersAnswers, sequencePattern)) {
+                setRenderMsg(true)
+                setAnswerIs('correct')
                 setResultMessage('CORRECT!')
                 setTimeout(() => {
                     setSequenceAmount((prev) => prev + 1)
@@ -25,8 +29,12 @@ export default function SimonSaysTitle() {
                 setTimeout(() => {
                     setResult("");
                     setResultMessage('')
-                }, 1100)
+                    setRenderMsg(false)
+                    setAnswerIs('')
+                }, 1300)
             } else {
+                setRenderMsg(true)
+                setAnswerIs('incorrect')
                 setResultMessage('INCORRECT..')
                 setTimeout(() => {
                     setResult("LOSE");
@@ -34,14 +42,16 @@ export default function SimonSaysTitle() {
                 setTimeout(() => {
                     setResult("");
                     setResultMessage('')
-                }, 1100)
+                    setRenderMsg(false)
+                    setAnswerIs('')
+                }, 1300)
             }
         }
     }, [playersAnswers, sequencePattern]);
 
     return (
         <div className="simonsaystitle">
-            {resultMessage}
+            {renderMsg && <p className={`${answerIs}`}>{resultMessage}</p>}
         </div>
     );
 }
