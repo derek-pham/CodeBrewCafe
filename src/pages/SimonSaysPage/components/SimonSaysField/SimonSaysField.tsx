@@ -4,7 +4,7 @@ import SSFieldSquare from "./components/SSFieldSquare/SSFieldSquare";
 import { SSContext } from "../../SimonSaysPageContext";
 
 export default function SimonSaysField() {
-    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result, setResult, playersAnswers, setPlayersAnswers } = useContext(SSContext);
+    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result,  playersAnswers, setPlayersAnswers, setAlertTransform } = useContext(SSContext);
     const [currentGameStage, setCurrentGameStage] = useState(1);
     const [sequenceNotInitiated, setSequenceNotInitiated] = useState(true);
     const [transformTrigger, setTransformTrigger] = useState(false);
@@ -32,6 +32,10 @@ export default function SimonSaysField() {
         if (sequenceNotInitiated) {
             addToSequencePattern('');
             setSequenceNotInitiated(false);
+        }
+
+        if (result === "WIN" && sequenceAmount > 9) {
+            setAlertTransform(true)
         }
 
         if (result === "WIN" && sequenceAmount > 10) {

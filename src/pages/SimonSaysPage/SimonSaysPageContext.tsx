@@ -5,13 +5,15 @@ export const SSContext = createContext();
 export function SimonSaysPageContextProvider({ children }) {
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
     const [sequencePattern, setSequencePattern] = useState([])
-    const [sequenceAmount, setSequenceAmount] = useState(2);
+    const [sequenceAmount, setSequenceAmount] = useState(9);
     const [playersAnswers, setPlayersAnswers] = useState([])
     const [activeSquare, setActiveSquare] = useState('');
     const [result, setResult] = useState("");
     const [reset, incrementReset] = useState(0)
     const [playerLives, setPlayerLives]= useState(3);
     const [disableUserControls, setDisableUserControls] = useState(false)
+    const [renderMsg, setRenderMsg] = useState(false)
+    const [alertTransform, setAlertTransform] = useState(false)
 
     const value = {
         delay,
@@ -30,7 +32,11 @@ export function SimonSaysPageContextProvider({ children }) {
         playerLives,
         setPlayerLives,
         disableUserControls,
-        setDisableUserControls
+        setDisableUserControls,
+        renderMsg, 
+        setRenderMsg,
+        alertTransform,
+        setAlertTransform,
     };
 
     return (
