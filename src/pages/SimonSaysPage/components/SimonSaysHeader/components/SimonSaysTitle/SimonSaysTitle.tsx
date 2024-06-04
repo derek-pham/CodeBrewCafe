@@ -3,7 +3,7 @@ import './SimonSaysTitle.css';
 import { SSContext } from "../../../../SimonSaysPageContext";
 
 export default function SimonSaysTitle() {
-    const { playersAnswers, sequencePattern, setResult,sequenceAmount, setSequenceAmount, renderMsg, setRenderMsg, alertTransform, setAlertTransform } = useContext(SSContext);
+    const { playersAnswers, sequencePattern, setResult, sequenceAmount, setSequenceAmount, renderMsg, setRenderMsg, alertTransform, setAlertTransform, playerLives } = useContext(SSContext);
     const [resultMessage, setResultMessage] = useState('')
     const [answerIs, setAnswerIs] = useState('')
 
@@ -65,6 +65,36 @@ export default function SimonSaysTitle() {
             }
         }
     }, [playersAnswers, sequencePattern]);
+
+    useEffect(() => {
+        if (playerLives <= 0) {
+            setTimeout(() => {
+                setRenderMsg(true)
+                setAnswerIs('incorrect')
+                setResultMessage('GAME OVER...')
+            }, 500)
+
+            setTimeout(() => {
+                setResultMessage('')
+                setAnswerIs('')
+                setRenderMsg(false)
+                setAlertTransform(false);
+            }, 2700)
+
+            setTimeout(() => {
+                setRenderMsg(true)
+                setAnswerIs('incorrect')
+                setResultMessage('TRY AGAIN!')
+            }, 2800)
+
+            setTimeout(() => {
+                setResultMessage('')
+                setAnswerIs('')
+                setRenderMsg(false)
+                setAlertTransform(false);
+            }, 4300)
+        }
+    },[playerLives])
 
     return (
         <div className="simonsaystitle">

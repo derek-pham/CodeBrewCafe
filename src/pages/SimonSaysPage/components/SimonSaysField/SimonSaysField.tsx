@@ -4,7 +4,7 @@ import SSFieldSquare from "./components/SSFieldSquare/SSFieldSquare";
 import { SSContext } from "../../SimonSaysPageContext";
 
 export default function SimonSaysField() {
-    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result,  playersAnswers, setPlayersAnswers, setAlertTransform, setPlayerLives } = useContext(SSContext);
+    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result,  playersAnswers, setPlayersAnswers, setAlertTransform, playerLives, setPlayerLives } = useContext(SSContext);
     const [currentGameStage, setCurrentGameStage] = useState(1);
     const [sequenceNotInitiated, setSequenceNotInitiated] = useState(true);
     const [transformTrigger, setTransformTrigger] = useState(false);
@@ -35,6 +35,18 @@ export default function SimonSaysField() {
     },[currentGameStage])
 
     useEffect(() => {
+        if (playerLives <= 0) {
+            setCurrentGameStage(1);
+            setPlayersAnswers([]);
+            addToSequencePattern('reset');
+            setSequenceAmount(2);
+            setTimeout(() => {
+                setPlayerLives(3)
+            },3000)
+        }
+    },[playerLives])
+
+    useEffect(() => {
         if (sequenceNotInitiated) {
             addToSequencePattern('');
             setSequenceNotInitiated(false);
@@ -56,7 +68,6 @@ export default function SimonSaysField() {
             setPlayersAnswers([]);
             setPlayerLives((prev) => prev - 1)
         }
-
     }, [result]);
 
     useEffect(() => {
