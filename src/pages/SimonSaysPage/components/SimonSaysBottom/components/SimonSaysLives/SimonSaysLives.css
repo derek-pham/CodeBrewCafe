@@ -1,8 +1,10 @@
 .simonsayslives {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 90%;
     user-select: none;
-    background-color: rebeccapurple;
+    background-color: var(--mn-col);
+    border: 2px solid var(--bord-col);
+    border-radius: 5px;
     text-align: center;
     align-content: center;
 }
