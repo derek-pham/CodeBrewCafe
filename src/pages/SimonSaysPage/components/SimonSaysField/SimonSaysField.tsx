@@ -28,6 +28,12 @@ export default function SimonSaysField() {
         setSequencePattern(newPattern);
     }
 
+    useEffect(()=> {
+        if (currentGameStage>3) {
+            setCurrentGameStage(3)
+        }
+    },[currentGameStage])
+
     useEffect(() => {
         if (sequenceNotInitiated) {
             addToSequencePattern('');
