@@ -4,7 +4,7 @@ import SSActivatedSquare from "../SSActivatedSquare/SSActivatedSquare";
 import { SSContext } from "../../../../SimonSaysPageContext";
 
 export default function SSFieldSquare({ squareNum, isActivated, setActiveSquare }) {
-    const {playersAnswers, setPlayersAnswers} = useContext(SSContext)
+    const {playersAnswers, setPlayersAnswers, disableUserControls} = useContext(SSContext)
     const [showActivatedSquare, setShowActivatedSquare] = useState(isActivated);
     const [isChosen, setIsChosen] = useState(false);
 
@@ -22,6 +22,9 @@ export default function SSFieldSquare({ squareNum, isActivated, setActiveSquare 
     };
 
     function handleClick() {
+        if (disableUserControls) {
+            return
+        }
         setIsChosen(true);
         setPlayersAnswers((prevItems) => [
             ...prevItems, 

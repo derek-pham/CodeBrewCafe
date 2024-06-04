@@ -11,6 +11,7 @@ export function SimonSaysPageContextProvider({ children }) {
     const [result, setResult] = useState("");
     const [reset, incrementReset] = useState(0)
     const [playerLives, setPlayerLives]= useState(3);
+    const [disableUserControls, setDisableUserControls] = useState(false)
 
     const value = {
         delay,
@@ -27,7 +28,9 @@ export function SimonSaysPageContextProvider({ children }) {
         reset,
         incrementReset,
         playerLives,
-        setPlayerLives
+        setPlayerLives,
+        disableUserControls,
+        setDisableUserControls
     };
 
     return (

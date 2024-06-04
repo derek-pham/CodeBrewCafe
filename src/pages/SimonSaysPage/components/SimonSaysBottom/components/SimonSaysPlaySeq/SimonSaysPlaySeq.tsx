@@ -3,12 +3,13 @@ import './SimonSaysPlaySeq.css'
 import { SSContext } from "../../../../SimonSaysPageContext";
 
 export default function SimonSaysPlaySeq() {
-    const { delay, sequencePattern, setActiveSquare } = useContext(SSContext)
+    const { delay, sequencePattern, setActiveSquare, setDisableUserControls } = useContext(SSContext)
     const [isDisabled, setIsDisabled] = useState(false)
 
     async function playSequence() {
         console.log(sequencePattern)
         setIsDisabled(true)
+        setDisableUserControls(true)
         for (let i = 0; i < sequencePattern.length; i++) {
             let x = sequencePattern[i]
             setActiveSquare(`sq${x}`)
@@ -16,6 +17,7 @@ export default function SimonSaysPlaySeq() {
             await delay(1100);
         }
         setIsDisabled(false)
+        setDisableUserControls(false)
     }
 
     return (
