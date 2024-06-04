@@ -25,7 +25,13 @@ export default function SSFieldSquare({ squareNum, isActivated, setActiveSquare 
         if (disableUserControls) {
             return
         }
-        setIsChosen(true);
+
+        // Using requestAnimationFrame to prevent react batching
+        setIsChosen(false);
+        requestAnimationFrame(() => {
+            setIsChosen(true);
+        });
+
         setPlayersAnswers((prevItems) => [
             ...prevItems, 
             parseInt(squareNum.replace('square', ''), 10)
