@@ -4,8 +4,7 @@ import SSFieldSquare from "./components/SSFieldSquare/SSFieldSquare";
 import { SSContext } from "../../SimonSaysPageContext";
 
 export default function SimonSaysField() {
-    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result,  playersAnswers, setPlayersAnswers, setAlertTransform, playerLives, setPlayerLives } = useContext(SSContext);
-    const [currentGameStage, setCurrentGameStage] = useState(1);
+    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result, playersAnswers, setPlayersAnswers, setAlertTransform, playerLives, setPlayerLives, currentGameStage, setCurrentGameStage, playerWon, setDisableUserControls } = useContext(SSContext);
     const [sequenceNotInitiated, setSequenceNotInitiated] = useState(true);
     const [transformTrigger, setTransformTrigger] = useState(false);
     let upperLimit = (currentGameStage + 1) ** 2;
@@ -27,13 +26,13 @@ export default function SimonSaysField() {
         }
         setSequencePattern(newPattern);
     }
-
-    useEffect(()=> {
-        if (currentGameStage>3) {
+    // Capped game stage
+    useEffect(() => {
+        if (currentGameStage > 3) {
             setCurrentGameStage(3)
         }
-    },[currentGameStage])
-
+    }, [currentGameStage])
+    //Game over
     useEffect(() => {
         if (playerLives <= 0) {
             setCurrentGameStage(1);
@@ -42,9 +41,9 @@ export default function SimonSaysField() {
             setSequenceAmount(2);
             setTimeout(() => {
                 setPlayerLives(3)
-            },3000)
+            }, 3000)
         }
-    },[playerLives])
+    }, [playerLives])
 
     useEffect(() => {
         if (sequenceNotInitiated) {
@@ -78,10 +77,18 @@ export default function SimonSaysField() {
             console.log('Effect ran due to dependency change');
             setTransformTrigger(false);
         } else {
-          // Your effect logic here, which will only run on subsequent dependency changes
-          setTransformTrigger(false);
+            // Your effect logic here, which will only run on subsequent dependency changes
+            setTransformTrigger(false);
         }
-      }, [transformTrigger]);
+    }, [transformTrigger]);
+
+    useEffect(() => {
+        if (playerWon) {
+            setDisableUserControls(true)
+            setSequenceAmount(10);
+            addToSequencePattern('');
+        }
+    }, [playerWon]);
 
     useEffect(() => {
         console.log('sequencePattern:', sequencePattern);

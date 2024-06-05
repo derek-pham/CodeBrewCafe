@@ -5,7 +5,7 @@ export const SSContext = createContext();
 export function SimonSaysPageContextProvider({ children }) {
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
     const [sequencePattern, setSequencePattern] = useState([])
-    const [sequenceAmount, setSequenceAmount] = useState(9);
+    const [sequenceAmount, setSequenceAmount] = useState(2);
     const [playersAnswers, setPlayersAnswers] = useState([])
     const [activeSquare, setActiveSquare] = useState('');
     const [result, setResult] = useState("");
@@ -14,6 +14,8 @@ export function SimonSaysPageContextProvider({ children }) {
     const [disableUserControls, setDisableUserControls] = useState(false)
     const [renderMsg, setRenderMsg] = useState(false)
     const [alertTransform, setAlertTransform] = useState(false)
+    const [currentGameStage, setCurrentGameStage] = useState(1);
+    const [playerWon, setPlayerWon] = useState(false)
 
     const value = {
         delay,
@@ -36,7 +38,11 @@ export function SimonSaysPageContextProvider({ children }) {
         renderMsg, 
         setRenderMsg,
         alertTransform,
-        setAlertTransform,
+        setAlertTransform, 
+        currentGameStage, 
+        setCurrentGameStage,
+        playerWon, 
+        setPlayerWon
     };
 
     return (

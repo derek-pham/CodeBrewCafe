@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './SimonSaysPlaySeq.css'
 import { SSContext } from "../../../../SimonSaysPageContext";
 
 export default function SimonSaysPlaySeq() {
-    const { delay, sequencePattern, setActiveSquare, setDisableUserControls } = useContext(SSContext)
+    const { delay, sequencePattern, setActiveSquare, setDisableUserControls, playerWon } = useContext(SSContext)
     const [isDisabled, setIsDisabled] = useState(false)
 
     async function playSequence() {
@@ -19,6 +19,12 @@ export default function SimonSaysPlaySeq() {
         setIsDisabled(false)
         setDisableUserControls(false)
     }
+    
+    useEffect(() => {
+        if (playerWon) {
+            setIsDisabled(true)
+        }
+    }, [playerWon]);
 
     return (
         <div className={`simonsaysplayseq ${isDisabled&& 'disabled'}`}>

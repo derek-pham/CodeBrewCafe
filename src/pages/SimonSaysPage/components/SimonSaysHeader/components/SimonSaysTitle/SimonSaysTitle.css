@@ -25,6 +25,18 @@
     background: linear-gradient(to right, rgba(255, 99, 71, 0) 10%, MediumSeaGreen 25%, MediumSeaGreen 75%, rgba(255, 99, 71, 0) 90%);
 }
 
+.simonsaystitle p.congrats {
+    position: relative; 
+    animation: correctAnim 1.3s ease 1 forwards;
+    background: linear-gradient(to right, rgba(255, 99, 71, 0) 1%, DodgerBlue 25%, DodgerBlue 75%, rgba(255, 99, 71, 0) 99%);
+}
+
+.simonsaystitle p.youwon {
+    position: relative; 
+    animation: congratsAnim 1.3s ease 1, youWonAnim 1.3s ease-in-out infinite;
+    background: linear-gradient(to right, rgba(255, 99, 71, 0) 1%, DodgerBlue 25%, DodgerBlue 75%, rgba(255, 99, 71, 0) 99%);
+}
+
 @keyframes incorrectAnim {
     0% {
         opacity: 0;
@@ -66,5 +78,49 @@
     100% {
         opacity: 0;
         right: -20px;
+    }
+}
+
+@keyframes congratsAnim {
+    0% {
+        opacity: 0;
+        right: 20px;
+    }
+
+    10% {
+        opacity: 1;
+        right: 0px;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0px;
+    }
+}
+
+@keyframes youWonAnim {
+    0% {
+        color: rgba(255, 0, 0, 0.7); /* light red */
+    }
+    20% {
+        color: rgba(255, 165, 0, 0.7); /* light orange */
+    }
+    40% {
+        color: rgba(255, 255, 0, 0.7); /* light yellow */
+    }
+    60% {
+        color: rgba(0, 128, 0, 0.7); /* light green */
+    }
+    80% {
+        color: rgba(0, 0, 255, 0.7); /* light blue */
+    }
+    100% {
+        color: rgba(128, 0, 128, 0.7); /* light purple */
+    }
+}
+
+@media (max-width: 600px) {
+    .simonsaystitle p {
+        font-size: 26px;
     }
 }

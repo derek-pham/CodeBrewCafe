@@ -3,9 +3,9 @@ import './SimonSaysTitle.css';
 import { SSContext } from "../../../../SimonSaysPageContext";
 
 export default function SimonSaysTitle() {
-    const { playersAnswers, sequencePattern, setResult, sequenceAmount, setSequenceAmount, renderMsg, setRenderMsg, alertTransform, setAlertTransform, playerLives } = useContext(SSContext);
-    const [resultMessage, setResultMessage] = useState('')
-    const [answerIs, setAnswerIs] = useState('')
+    const { playersAnswers, sequencePattern, setResult, sequenceAmount, setSequenceAmount, renderMsg, setRenderMsg, alertTransform, setAlertTransform, playerLives, currentGameStage, setPlayerWon } = useContext(SSContext);
+    const [resultMessage, setResultMessage] = useState('');
+    const [answerIs, setAnswerIs] = useState('');
 
     useEffect(() => {
         if (playersAnswers.length > 0 && playersAnswers.length === sequencePattern.length) {
@@ -16,52 +16,73 @@ export default function SimonSaysTitle() {
                 }
                 return true;
             };
-            console.log(alertTransform)
+
             if (arraysMatch(playersAnswers, sequencePattern)) {
-                setRenderMsg(true)
-                setAnswerIs('correct')
-                setResultMessage('CORRECT!')
+                setRenderMsg(true);
+                setAnswerIs('correct');
+                setResultMessage('CORRECT!');
                 setTimeout(() => {
-                    setSequenceAmount((prev) => prev + 1)
+                    setSequenceAmount((prev) => prev + 1);
                     setResult("WIN");
-                }, 1000)
+                }, 1000);
 
                 setTimeout(() => {
                     setResult("");
-                    setResultMessage('')
-                    setRenderMsg(false)
-                    setAnswerIs('')
-                }, 1300)
-                // another if-statement to alert player "NEXT STAGE"
+                    setResultMessage('');
+                    setRenderMsg(false);
+                    setAnswerIs('');
+                }, 1300);
             } else {
-                setRenderMsg(true)
-                setAnswerIs('incorrect')
-                setResultMessage('INCORRECT..')
+                setRenderMsg(true);
+                setAnswerIs('incorrect');
+                setResultMessage('INCORRECT..');
                 setTimeout(() => {
                     setResult("LOSE");
-                }, 1000)
+                }, 1000);
 
                 setTimeout(() => {
                     setResult("");
-                    setResultMessage('')
-                    setRenderMsg(false)
-                    setAnswerIs('')
-                }, 1300)
+                    setResultMessage('');
+                    setRenderMsg(false);
+                    setAnswerIs('');
+                }, 1300);
             }
 
-            if (alertTransform && arraysMatch(playersAnswers, sequencePattern)) {
+            if (currentGameStage >= 3 && arraysMatch(playersAnswers, sequencePattern) && sequenceAmount >= 10) {
                 setTimeout(() => {
-                    setRenderMsg(true)
-                    setAnswerIs('correct')
-                    setResultMessage('NEXT STAGE!')
-                }, 1400)
+                    setRenderMsg(true);
+                    setAnswerIs('congrats');
+                    setResultMessage('CONGRATULATIONS!');
+                    setPlayerWon(true);
+                }, 1400);
 
                 setTimeout(() => {
-                    setResultMessage('')
-                    setAnswerIs('')
-                    setRenderMsg(false)
+                    setResultMessage('');
+                    setAnswerIs('');
+                    setRenderMsg(false);
                     setAlertTransform(false);
-                }, 2700)
+                }, 2700);
+
+                setTimeout(() => {
+                    setRenderMsg(true);
+                    setAnswerIs('youwon');
+                    setResultMessage('YOU WON!');
+                    setPlayerWon(true);
+                }, 2900);
+
+            } else if (alertTransform && arraysMatch(playersAnswers, sequencePattern)) {
+                setTimeout(() => {
+                    setRenderMsg(true);
+                    setAnswerIs('correct');
+                    setResultMessage('NEXT STAGE!');
+                }, 1400);
+
+                setTimeout(() => {
+                    setResultMessage('');
+                    setAnswerIs('');
+                    setRenderMsg(false);
+                    setAlertTransform(false);
+                }, 2700);
             }
         }
     }, [playersAnswers, sequencePattern]);
@@ -69,32 +90,32 @@ export default function SimonSaysTitle() {
     useEffect(() => {
         if (playerLives <= 0) {
             setTimeout(() => {
-                setRenderMsg(true)
-                setAnswerIs('incorrect')
-                setResultMessage('GAME OVER...')
-            }, 500)
+                setRenderMsg(true);
+                setAnswerIs('incorrect');
+                setResultMessage('GAME OVER...');
+            }, 500);
 
             setTimeout(() => {
-                setResultMessage('')
-                setAnswerIs('')
-                setRenderMsg(false)
+                setResultMessage('');
+                setAnswerIs('');
+                setRenderMsg(false);
                 setAlertTransform(false);
-            }, 2700)
+            }, 2700);
 
             setTimeout(() => {
-                setRenderMsg(true)
-                setAnswerIs('incorrect')
-                setResultMessage('TRY AGAIN!')
-            }, 2800)
+                setRenderMsg(true);
+                setAnswerIs('incorrect');
+                setResultMessage('TRY AGAIN!');
+            }, 2800);
 
             setTimeout(() => {
-                setResultMessage('')
-                setAnswerIs('')
-                setRenderMsg(false)
+                setResultMessage('');
+                setAnswerIs('');
+                setRenderMsg(false);
                 setAlertTransform(false);
-            }, 4300)
+            }, 4300);
         }
-    },[playerLives])
+    }, [playerLives]);
 
     return (
         <div className="simonsaystitle">
