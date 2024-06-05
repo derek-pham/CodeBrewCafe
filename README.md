@@ -74,9 +74,8 @@ npm run dev
 
 ## Future work
 ### Updates for existing features:
-- The pages are yet to implement a comprehensive amount of responsiveness
+- Most pages are responsiveness up to 600px. This does not currently considered responsiveness for smaller heights
 - TicTacToe currently does not feature a tie condition. For now players can simply use the reset button for this
 
 ### Updates for upcoming features:
-- The calculator is next on the list to be created
 - Deployment is also a priority so that more complex apps can be used since this mini-project does not have a backend component
