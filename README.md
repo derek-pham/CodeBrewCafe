@@ -30,10 +30,7 @@ The concept of having an assortment of brain training games is something I wante
 
 ## Home
 #### Landing Page + Demo
-<video autoplay muted loop>
-  <source src="public\readme-assets\homepage-demo.mp4" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+<img src="public\readme-assets\home-landingpage.png" alt="Home Page"/>
 The landing page features a collection of many to come widgets and currently consists of the TicTacToe widget, Calcluator widget and a SimonSays widget. 
 
 Each widget has their own page and can be accessed by selecting them from the grid layout and then selecting the go button to navigate to their page.
@@ -41,22 +38,18 @@ Each widget has their own page and can be accessed by selecting them from the gr
 ## Widgets
 ### TicTacToe
 #### Landing Page + Demo
-
-<iframe width="1217" height="685" src="https://www.youtube.com/embed/Bt4rynzu4_M" title="ttt demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="public\readme-assets\tictactoe-landingpage.png" alt="TTT Page"/>
 
 The first widget I've created and added is the classic game of TicTacToe. Players take turns placing an 'X' or an 'O' until either players three adjacently in a straight line and earn a point. 
 
 ### Calculator
 #### Landing Page
-<img src="public\readme-assets\calculator-page.png" alt="Calculator PAge"/>
+<img src="public\readme-assets\calculator-page.png" alt="Calculator Page"/>
 The second widget is a simple calculator widget. It is a straightforward tool that can perform basic arithmetic operations, including addition, subtraction, multiplication, and division.
 
 ### Simon Says
 #### Landing Page + Demo
-<video autoplay muted loop>
-  <source src="public/readme-assets/simonsays-demo.mp4" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+<img src="public\readme-assets\simonsays-landingpage.png" alt="SimonSays Page"/>
 The third widget in the roster is the game Simon Says which is an interactive game that challenges users to memorize and repeat a sequence of colors. Users have to beat 3 stages with only three lives.
 
 ## Usage
