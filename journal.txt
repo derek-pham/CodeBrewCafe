@@ -1,5 +1,0 @@
-TODO:
-- implement playerLives
-- implement game over
-- implement congratulations
-- update readme
