@@ -41,6 +41,7 @@ Each widget has their own page and can be accessed by selecting them from the gr
 ## Widgets
 ### TicTacToe
 #### Landing Page + Demo
+
 <iframe width="1217" height="685" src="https://www.youtube.com/embed/Bt4rynzu4_M" title="ttt demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The first widget I've created and added is the classic game of TicTacToe. Players take turns placing an 'X' or an 'O' until either players three adjacently in a straight line and earn a point. 
