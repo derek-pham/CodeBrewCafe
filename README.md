@@ -29,19 +29,36 @@ The concept of having an assortment of brain training games is something I wante
 
 
 ## Home
-#### Landing Page
-![Home Page](public/readme-assets/home-landingpage.png)
-The landing page features a collection of many to come widgets and currently consists of the TicTacToe widget (the calculator is still a work in progress at this stage). 
+#### Landing Page + Demo
+<video autoplay muted loop>
+  <source src="public\readme-assets\homepage-demo.mp4" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+The landing page features a collection of many to come widgets and currently consists of the TicTacToe widget, Calcluator widget and a SimonSays widget. 
 
 Each widget has their own page and can be accessed by selecting them from the grid layout and then selecting the go button to navigate to their page.
 
 ## Widgets
 ### TicTacToe
-#### Landing Page
-![TicTacToe Page](public/readme-assets/tictactoe-landingpage.png)
+#### Landing Page + Demo
+<video autoplay muted loop>
+  <source src="public\readme-assets\ttt-demo.mp4" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 The first widget I've created and added is the classic game of TicTacToe. Players take turns placing an 'X' or an 'O' until either players three adjacently in a straight line and earn a point. 
 
-The page features the same white-paper colour scheme along with a single colour accent as part of its theme.
+### Calculator
+#### Landing Page
+![Calculator Page](public\readme-assets\calculator-page.png)
+The second widget is a simple calculator widget. It is a straightforward tool that can perform basic arithmetic operations, including addition, subtraction, multiplication, and division.
+
+### Simon Says
+#### Landing Page + Demo
+<video autoplay muted loop>
+  <source src="public/readme-assets/simonsays-demo.mp4" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+The third widget in the roster is the game Simon Says which is an interactive game that challenges users to memorize and repeat a sequence of colors. Users have to beat 3 stages with only three lives.
 
 ## Usage
 ### Forking repository
