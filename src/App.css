@@ -32,7 +32,8 @@ html, body, #root {
     padding: 0;
 }
 @media only screen and (max-width: 600px) {
-    .body {
+    body {
+        padding-top: env(safe-area-inset-top); /* Adjust padding considering the safe area */
         height: calc(100vh - env(safe-area-inset-top)); /* Adjust height considering the safe area */
     }
 }
