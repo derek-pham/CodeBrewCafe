@@ -13,8 +13,7 @@
 
 ## Welcome to CodeBrewCafe
 ### Background
-CodeBrewCafe is a collection of small widgets and mini-projects created during my continuous learning journey. Each widget is designed to address a specific need or curiosity, allowing me to experiment with different technologies and programming concepts. This project is currently live [here](https://codebrewcafe.netlify.app/).
-
+CodeBrewCafe is a collection of small widgets and mini-projects created during my continuous learning journey. Each widget is designed to address a specific need or curiosity, allowing me to experiment with different technologies and programming concepts. This project is currently live <a href="https://codebrewcafe.netlify.app/" target="_blank">here</a>.
 ### Overview and Goals
 The main goal of CodeBrewCafe is to continuously build and expand the project, making it a tangible testament to my coding learning journey.
 
