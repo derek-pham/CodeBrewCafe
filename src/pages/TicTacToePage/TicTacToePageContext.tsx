@@ -1,18 +1,19 @@
-// AppContext.js
-import React, { createContext, useState } from 'react';
+// AppContext.tsx
+import { createContext, useState, ReactNode } from 'react';
+import { TicTacToeContextType } from './tttPageContextTypes';
 
-export const TTTContext = createContext();
+export const TTTContext = createContext<TicTacToeContextType | undefined>(undefined);
 
-export function TicTacToePageContextProvider({ children }) {
-    const [currentPlayer, setCurrentPlayer] = useState('Player-X')
-    const [prevPlayer, setPrevPlayer] = useState('Player-X')
-    const [setting, setSetting] = useState('alternate-default')
-    const [gameStatus, setGameStatus] = useState(['-', '-', '-', '-', '-', '-', '-', '-', '-'])
-    const [gameWinner, setGameWinner] = useState(null)
-    const [winningCombo, setWinningCombo] = useState([])
-    const [resetDivTrigger, setResetDivTrigger] = useState(false)
+export function TicTacToePageContextProvider({ children }: { children: ReactNode }) {
+    const [currentPlayer, setCurrentPlayer] = useState<string>('Player-X');
+    const [prevPlayer, setPrevPlayer] = useState<string>('Player-X');
+    const [setting, setSetting] = useState<string>('alternate-default');
+    const [gameStatus, setGameStatus] = useState<string[]>(['-', '-', '-', '-', '-', '-', '-', '-', '-']);
+    const [gameWinner, setGameWinner] = useState<string | null>(null);
+    const [winningCombo, setWinningCombo] = useState<number[]>([]);
+    const [resetDivTrigger, setResetDivTrigger] = useState<boolean>(false);
 
-    const value = {
+    const value: TicTacToeContextType = {
         currentPlayer,
         setCurrentPlayer,
         prevPlayer,

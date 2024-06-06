@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
-import { TTTContext } from '../../TicTacToePageContext';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../../../hooks/useTheme';
 import themeSwitch from '../../../HomePage/components/SideBar/dark-mode.png'
 import './TTTSideBar.css';
 
 function TTTSideBar() {
-  const { gameStatus, gameWinner, winningCombo } = useContext(TTTContext)
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const toggleTheme = useTheme();

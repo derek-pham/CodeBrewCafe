@@ -2,9 +2,15 @@ import { useState, useContext } from 'react'
 import './TTTReset.css'
 import { TTTContext } from '../../../../TicTacToePageContext'
 import resetImg from './reset.png'
+import { TicTacToeContextType } from '../../../../tttPageContextTypes'
 
 export default function TTTReset() {
-    const { prevPlayer, setPrevPlayer, setCurrentPlayer, setGameStatus, setGameWinner, setWinningCombo, setResetDivTrigger } = useContext(TTTContext)
+    const context = useContext<TicTacToeContextType | undefined>(TTTContext);
+    if (!context) {
+        throw new Error("Component must be used within a TicTacToePageContextProvider");
+    }
+
+    const { prevPlayer, setPrevPlayer, setCurrentPlayer, setGameStatus, setGameWinner, setWinningCombo, setResetDivTrigger } = context
 
     const [isActive, setIsActive] = useState(false);
 

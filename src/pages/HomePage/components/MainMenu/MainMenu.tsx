@@ -1,4 +1,3 @@
-import React from 'react';
 import './MainMenu.css';
 import TicTacToeButton from './buttons/TicTacToeButton/TicTacToeButton';
 import CalculatorButton from './buttons/CalculatorButton/CalculatorButton';

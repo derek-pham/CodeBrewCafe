@@ -1,15 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import './SimonSaysTitle.css';
 import { SSContext } from "../../../../SimonSaysPageContext";
+import { SimonSaysContextType } from "../../../../simonSaysPageContextTypes";
 
 export default function SimonSaysTitle() {
-    const { playersAnswers, sequencePattern, setResult, sequenceAmount, setSequenceAmount, renderMsg, setRenderMsg, alertTransform, setAlertTransform, playerLives, currentGameStage, setPlayerWon } = useContext(SSContext);
+    const context = useContext<SimonSaysContextType | undefined>(SSContext);
+    if (!context) {
+        throw new Error("Component must be used within a SimonSaysPageContextProvider");
+    }
+    const { playersAnswers, sequencePattern, setResult, sequenceAmount, setSequenceAmount, renderMsg, setRenderMsg, alertTransform, setAlertTransform, playerLives, currentGameStage, setPlayerWon } = context;
+    
     const [resultMessage, setResultMessage] = useState('');
     const [answerIs, setAnswerIs] = useState('');
 
     useEffect(() => {
         if (playersAnswers.length > 0 && playersAnswers.length === sequencePattern.length) {
-            const arraysMatch = (arr1, arr2) => {
+            const arraysMatch = (arr1: number[], arr2: number[]) => {
                 if (arr1.length !== arr2.length) return false;
                 for (let i = 0; i < arr1.length; i++) {
                     if (arr1[i] !== arr2[i]) return false;

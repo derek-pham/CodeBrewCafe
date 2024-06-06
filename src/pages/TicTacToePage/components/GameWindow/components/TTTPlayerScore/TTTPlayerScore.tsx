@@ -1,10 +1,17 @@
 import { useState, useContext, useEffect } from 'react'
 import './TTTPlayerScore.css'
 import { TTTContext } from '../../../../TicTacToePageContext'
+import { TicTacToeContextType } from '../../../../tttPageContextTypes';
+import { TTTPlayerProps } from '../TTTPlayer/tttPlayerTypes';
 
 
-export default function TTTPlayerScore({ playername }) {
-    const { gameWinner } = useContext(TTTContext)
+const TTTPlayerScore: React.FC<TTTPlayerProps> = ({ playername }) => {
+    const context = useContext<TicTacToeContextType | undefined>(TTTContext);
+    if (!context) {
+        throw new Error("Component must be used within a TicTacToePageContextProvider");
+    }
+    const { gameWinner } = context
+    
     const [playerScore, setPlayerScore] = useState(0)
 
     const addScore = () => {
@@ -25,3 +32,5 @@ export default function TTTPlayerScore({ playername }) {
         </>
     )
 }
+
+export default TTTPlayerScore;

@@ -1,10 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import './SimonSaysField.css';
 import SSFieldSquare from "./components/SSFieldSquare/SSFieldSquare";
 import { SSContext } from "../../SimonSaysPageContext";
+import { SimonSaysContextType } from "../../simonSaysPageContextTypes";
 
 export default function SimonSaysField() {
-    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result, playersAnswers, setPlayersAnswers, setAlertTransform, playerLives, setPlayerLives, currentGameStage, setCurrentGameStage, playerWon, setDisableUserControls } = useContext(SSContext);
+    const context = useContext<SimonSaysContextType | undefined>(SSContext);
+    if (!context) {
+        throw new Error("Component must be used within a SimonSaysPageContextProvider");
+    }
+    const { sequenceAmount, setSequenceAmount, sequencePattern, setSequencePattern, activeSquare, setActiveSquare, result, playersAnswers, setPlayersAnswers, setAlertTransform, playerLives, setPlayerLives, currentGameStage, setCurrentGameStage, playerWon, setDisableUserControls } = context;
     const [sequenceNotInitiated, setSequenceNotInitiated] = useState(true);
     const [transformTrigger, setTransformTrigger] = useState(false);
     let upperLimit = (currentGameStage + 1) ** 2;

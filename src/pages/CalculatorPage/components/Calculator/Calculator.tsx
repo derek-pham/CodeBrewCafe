@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { evaluate } from 'mathjs';
 import './Calculator.css'
 
@@ -41,7 +41,7 @@ export default function Calculator() {
     }
 
     useEffect(() => {
-        function handleKeyDown(event) {
+        function handleKeyDown(event: KeyboardEvent) {
             const { key } = event;
             if ('0123456789'.includes(key)) {
                 handleInput(key);

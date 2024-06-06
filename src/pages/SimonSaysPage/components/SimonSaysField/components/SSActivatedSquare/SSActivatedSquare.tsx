@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import './SSActivatedSquare.css';
+import { SSActivatedSquareProps } from './ssActivatedSquareTypes';
 
-export default function SSActivatedSquare({ onAnimationEnd , squareNum }) {
+const SSActivatedSquare: React.FC<SSActivatedSquareProps> = ({ onAnimationEnd, squareNum }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onAnimationEnd();
@@ -13,4 +14,6 @@ export default function SSActivatedSquare({ onAnimationEnd , squareNum }) {
     return (
         <div className={`ssactivatedsquare ${squareNum}bordercol`}></div>
     );
-}
+};
+
+export default SSActivatedSquare;

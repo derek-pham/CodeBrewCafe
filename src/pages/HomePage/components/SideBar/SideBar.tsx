@@ -1,13 +1,20 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SideBar.css';
 import { HomePageContext } from '../../HomePageContext';
+import { HomePageContextType } from '../../homePageContextTypes';
 import { useTheme } from '../../../../hooks/useTheme'
 import themeSwitch from './dark-mode.png'
 
 function SideBar() {
   const navigate = useNavigate();
-  const { displayTitle, displayImage, description, pageLink } = useContext(HomePageContext);
+  const context = useContext<HomePageContextType | undefined>(HomePageContext);
+
+  if (!context) {
+    throw new Error("SideBar must be used within a HomePageContextProvider");
+  }
+  
+  const { displayTitle, displayImage, description, pageLink } = context;
   const [isActive, setIsActive] = useState(false);
   const toggleTheme = useTheme();
 

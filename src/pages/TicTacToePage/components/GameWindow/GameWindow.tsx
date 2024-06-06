@@ -5,13 +5,19 @@ import TTTField from './components/TTTField/TTTField'
 import TTTPlayer from './components/TTTPlayer/TTTPlayer'
 import TTTReset from './components/TTTReset/TTTReset'
 import TTTWinner from './components/TTTWinner/TTTWinner'
+import { TicTacToeContextType } from '../../tttPageContextTypes'
 
 export default function GameWindow() {
+    const context = useContext<TicTacToeContextType | undefined>(TTTContext);
+    if (!context) {
+        throw new Error("Component must be used within a TicTacToePageContextProvider");
+    }
+
     const [highlightX, setHighlightX] = useState(true)
     const [highlightO, setHighlightO] = useState(false)
-    const { currentPlayer, setCurrentPlayer, gameStatus, setGameWinner, setWinningCombo } = useContext(TTTContext)
+    const { currentPlayer, gameStatus, setGameWinner, setWinningCombo } = context
 
-    function checkWinner(gameStatus) {
+    const checkWinner = (gameStatus: string[]): string | null => {
         // Define all possible winning combinations
         const winningCombinations = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows

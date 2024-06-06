@@ -1,11 +1,18 @@
-import React, { useState, useContext } from 'react';
+import { useContext } from 'react';
 import './TicTacToeButton.css';
 import tttImage from './tic-tac-toe.png'
 import { HomePageContext } from '../../../../HomePageContext';
+import { HomePageContextType } from '../../../../homePageContextTypes';
 
 function TicTacToeButton() {
+    const context = useContext<HomePageContextType | undefined>(HomePageContext);
 
-    const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription, setPageLink } = useContext(HomePageContext)
+        
+    if (!context) {
+        throw new Error("TicTacToeButton must be used within a HomePageContextProvider");
+    }
+
+    const { isSelected, setIsSelected, setDisplayTitle, setDisplayImage, setDescription, setPageLink } = context
 
     const description = 'Experience the classic game of tic-tac-toe! Perfect for quick breaks or passing time.'
 

@@ -1,23 +1,24 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState, ReactNode } from 'react';
+import { SimonSaysContextType } from './simonSaysPageContextTypes';
 
-export const SSContext = createContext();
+export const SSContext = createContext<SimonSaysContextType | undefined>(undefined);
 
-export function SimonSaysPageContextProvider({ children }) {
-    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-    const [sequencePattern, setSequencePattern] = useState([])
-    const [sequenceAmount, setSequenceAmount] = useState(2);
-    const [playersAnswers, setPlayersAnswers] = useState([])
-    const [activeSquare, setActiveSquare] = useState('');
-    const [result, setResult] = useState("");
-    const [reset, incrementReset] = useState(0)
-    const [playerLives, setPlayerLives]= useState(3);
-    const [disableUserControls, setDisableUserControls] = useState(false)
-    const [renderMsg, setRenderMsg] = useState(false)
-    const [alertTransform, setAlertTransform] = useState(false)
-    const [currentGameStage, setCurrentGameStage] = useState(1);
-    const [playerWon, setPlayerWon] = useState(false)
+export function SimonSaysPageContextProvider({ children }: { children: ReactNode }) {
+    const delay = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
+    const [sequencePattern, setSequencePattern] = useState<number[]>([]);
+    const [sequenceAmount, setSequenceAmount] = useState<number>(2);
+    const [playersAnswers, setPlayersAnswers] = useState<number[]>([]);
+    const [activeSquare, setActiveSquare] = useState<string>('');
+    const [result, setResult] = useState<string>('');
+    const [reset, incrementReset] = useState<number>(0);
+    const [playerLives, setPlayerLives] = useState<number>(3);
+    const [disableUserControls, setDisableUserControls] = useState<boolean>(false);
+    const [renderMsg, setRenderMsg] = useState<boolean>(false);
+    const [alertTransform, setAlertTransform] = useState<boolean>(false);
+    const [currentGameStage, setCurrentGameStage] = useState<number>(1);
+    const [playerWon, setPlayerWon] = useState<boolean>(false);
 
-    const value = {
+    const value: SimonSaysContextType = {
         delay,
         sequencePattern,
         setSequencePattern,
@@ -35,14 +36,14 @@ export function SimonSaysPageContextProvider({ children }) {
         setPlayerLives,
         disableUserControls,
         setDisableUserControls,
-        renderMsg, 
+        renderMsg,
         setRenderMsg,
         alertTransform,
-        setAlertTransform, 
-        currentGameStage, 
+        setAlertTransform,
+        currentGameStage,
         setCurrentGameStage,
-        playerWon, 
-        setPlayerWon
+        playerWon,
+        setPlayerWon,
     };
 
     return (
