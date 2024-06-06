@@ -41,3 +41,10 @@
         height: 25px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .simonsayseqtracker {
+        display: grid;
+        grid-template-columns: repeat(5, 30px);
+    }
+}

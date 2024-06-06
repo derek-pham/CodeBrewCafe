@@ -108,4 +108,9 @@
     #displayTitle {
         font-size: 24px;
     }
+
+    #description {
+        font-size: 14px;
+        margin: 0 0.4cm;
+    }
 }

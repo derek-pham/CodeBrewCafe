@@ -57,6 +57,7 @@
     .mainMenu button{
         height: 4cm;
         width: 4cm;
+        left: .425cm;
     }
 
     #testbutton {

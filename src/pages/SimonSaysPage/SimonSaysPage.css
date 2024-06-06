@@ -54,3 +54,10 @@ body {
         gap: 5px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .simonsays-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1.6fr 1fr;
+    }
+}

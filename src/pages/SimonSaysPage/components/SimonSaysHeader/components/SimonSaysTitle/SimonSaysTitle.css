@@ -124,3 +124,12 @@
         font-size: 26px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .simonsaystitle p {
+        font-size: 22px;
+    }
+    .simonsaystitle {
+        align-content: center;
+    }
+}  

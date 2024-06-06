@@ -32,3 +32,10 @@
         width: 7.5cm;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .simonsaysfield {
+        height: 6cm;
+        width: 6cm;
+    }
+}
