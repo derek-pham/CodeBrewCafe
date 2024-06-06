@@ -42,3 +42,9 @@ body {
         gap: 6px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .tttcontent {
+        grid-template-columns: 1fr 100px;
+    }
+}

@@ -14,3 +14,10 @@
         height: 8.5cm;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .ttt-field {
+        width: 7cm;
+        height: 7cm
+    }
+}

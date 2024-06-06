@@ -24,7 +24,7 @@ function TTTSideBar() {
         <img src={themeSwitch} alt="" />
       </button>
       <button
-        id='backbutton'
+        id='tttbackbutton'
         onMouseDown={handleMouseDown}
         onAnimationEnd={handleAnimationEnd} // Add event listener for animation end
         className={isActive ? 'active' : ''}

@@ -53,6 +53,18 @@
     }
 }
 
-@media (max-width: 590px) {
+@media only screen and (max-width: 600px) {
+    .mainMenu button{
+        height: 4cm;
+        width: 4cm;
+    }
 
+    #testbutton {
+        height: 4cm;
+        width: 4cm;
+    }
+
+    .mainMenu {
+        grid-template-rows: repeat(auto-fill, 4.8cm);
+    }  
 }

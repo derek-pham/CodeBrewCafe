@@ -7,3 +7,9 @@
     justify-content: center; /* Explicitly center horizontally */
     user-select: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .ttt-player-score {
+        font-size: 16px;
+    }
+}

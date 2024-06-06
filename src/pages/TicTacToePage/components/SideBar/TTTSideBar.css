@@ -14,7 +14,7 @@
     border-radius: 5px;
 }
 
-#backbutton {
+#tttbackbutton {
     font-family: "Poetsen One", sans-serif;
     font-size: 22px;
     height: 1.4cm;
@@ -26,13 +26,13 @@
     user-select: none;
 }
 
-#backbutton:hover {
+#tttbackbutton:hover {
     transform: scale(1.05);
     border: 1px solid tomato;
     color: #868686;
 }
 
-#backbutton.active {
+#tttbackbutton.active {
     animation: click 0.5s forwards;
 }
 
@@ -66,4 +66,23 @@
     border: 0;
     margin: 0;
     user-select: none;
+}
+
+@media (max-width: 1300px) {
+    #tttbackbutton {    
+        width: 90%;
+    }
+}
+
+@media (max-width: 660px) {
+    #tttbackbutton {    
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #tttbackbutton {    
+        width: 80%;
+        font-size: 16px;
+    }
 }
